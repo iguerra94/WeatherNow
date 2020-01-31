@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.iguerra94.weathernow">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_app_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_app_logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".views.signup_screens.UserRegisteredActivity"></activity>
+        <activity
+            android:name=".views.main_screens.search_screen.SearchActivity"
+            android:windowSoftInputMode="stateVisible"></activity>
+        <activity
+            android:name=".views.main_screens.MainScreenActivity"
+            android:label="@string/search_hint"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".views.signup_screens.SignupActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.login_screens.LoginActivity"
+            android:label="@string/login_options_toolbar_title"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.splash_screen.SplashActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

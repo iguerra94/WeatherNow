@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.main_screens.ProfileScreenFragment">
+
+    <LinearLayout
+        android:id="@+id/linear_layout_image_button_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="Imágen de perfil"
+            android:gravity="center"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/profile_image_image_button"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:scaleType="centerCrop"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/ic_account_circle"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_mode_edit"
+                android:layout_alignBottom="@id/profile_image_image_button"
+                android:layout_toRightOf="@id/profile_image_image_button"
+                />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/profile_email_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="E-mail"
+        android:textSize="12sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_below="@id/linear_layout_image_button_profile"
+        />
+
+    <TextView
+        android:id="@+id/profile_email_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:hint="ivanguerra09@gmail.com"
+        android:textSize="16sp"
+        android:gravity="center_vertical"
+        android:layout_below="@id/profile_email_label"
+        />
+
+    <TextView
+        android:id="@+id/profile_name_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nombre"
+        android:textSize="12sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_below="@id/profile_email_text_view"
+        />
+
+    <EditText
+        android:id="@+id/profile_name_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:hint="Ingresa tu nombre.."
+        android:textSize="16sp"
+        android:inputType="text"
+        android:layout_below="@id/profile_name_label"
+        />
+
+    <TextView
+        android:id="@+id/profile_lastname_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Apellido"
+        android:textSize="12sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_below="@id/profile_name_edit_text"
+        />
+
+    <EditText
+        android:id="@+id/profile_lastname_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:hint="Ingresa tu apellido.."
+        android:textSize="16sp"
+        android:inputType="textEmailAddress"
+        android:layout_below="@id/profile_lastname_label"
+        />
+
+    <TextView
+        android:id="@+id/profile_password_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Clave"
+        android:textSize="12sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_below="@id/profile_lastname_edit_text"
+        />
+
+    <EditText
+        android:id="@+id/profile_password_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:hint="Ingresa tu clave.."
+        android:textSize="16sp"
+        android:inputType="textPassword"
+        android:layout_below="@id/profile_password_label"
+        />
+
+    <Button
+        android:id="@+id/btnSaveUserProfileData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Guardar"
+        android:textSize="16sp"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/button_with_border_radius"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:layout_margin="10dp"
+        android:layout_alignParentBottom="true"
+        android:onClick="saveUserProfileData"
+        />
+
+</RelativeLayout>

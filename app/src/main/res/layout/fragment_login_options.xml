@@ -1,0 +1,53 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".views.login_screens.LoginOptionsFragment">
+
+    <ImageView
+        android:layout_width="525dp"
+        android:layout_height="500dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-40dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="-40dp"
+        android:alpha="0.12"
+        android:src="@mipmap/cloud_sun_solid_blurred"
+        />
+
+    <Button
+        android:id="@+id/btnLoginGoogleOption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Google"
+        android:textSize="16sp"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:background="@drawable/button_with_border_radius"
+        android:backgroundTint="@color/colorWhite"
+        android:layout_margin="16dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="34dp"
+        android:drawableLeft="@drawable/ic_google_icon"
+        />
+
+    <Button
+        android:id="@+id/btnLoginEmailOption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="E-mail"
+        android:textSize="16sp"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/button_with_border_radius"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="34dp"
+        android:drawableLeft="@drawable/ic_email_icon"
+        android:layout_below="@id/btnLoginGoogleOption"
+        />
+
+</RelativeLayout>

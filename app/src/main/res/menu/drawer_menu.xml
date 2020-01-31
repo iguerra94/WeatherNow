@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group
+        android:id="@+id/group1"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_weather"
+            android:icon="@drawable/ic_cloud_sun_solid"
+            android:title="@string/menu_weather"
+            android:checked="true"
+            android:checkable="true"
+            />
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_account_circle"
+            android:title="@string/menu_profile"
+            android:checkable="true"
+            />
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_settings"
+            android:title="@string/menu_settings"
+            android:checkable="true"
+            />
+    </group>
+
+    <group
+        android:id="@+id/group2"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_query_developer"
+            android:icon="@drawable/ic_query_developer"
+            android:title="@string/menu_query_developer"
+            android:checkable="false"
+            />
+        <item
+            android:id="@+id/nav_app_version"
+            android:icon="@drawable/ic_app_version"
+            android:title="@string/menu_app_version"
+            android:checkable="false"
+            />
+    </group>
+
+    <group android:id="@+id/group3">
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_logout"
+            android:title="@string/menu_logout"
+            android:checkable="false"
+            />
+    </group>
+
+</menu>

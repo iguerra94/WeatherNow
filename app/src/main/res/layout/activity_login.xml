@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".views.login_screens.LoginActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/loginToolbarLightAppBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="@color/colorPrimary"
+        android:theme="@style/ToolbarWhiteColouredBackArrow">
+
+        <com.iguerra94.weathernow.views.toolbar.SimpleToolbar
+            android:id="@+id/loginToolbarLight"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_margin="4dp"
+            android:elevation="4dp"
+            />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/loginToolbarDarkAppBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="@color/colorWhite"
+        android:theme="@style/ToolbarBlackColouredBackArrow"
+        android:visibility="gone">
+
+        <com.iguerra94.weathernow.views.toolbar.SimpleToolbar
+            android:id="@+id/loginToolbarDark"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_margin="4dp"
+            android:elevation="4dp"
+            />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Resto de la interfaz de usuario -->
+    <FrameLayout
+        android:id="@+id/loginContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+</LinearLayout>

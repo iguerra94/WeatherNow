@@ -1,0 +1,154 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".views.main_screens.WeatherScreenFragment">
+
+    <ImageView
+        android:id="@+id/background_weather_screen_fragment"
+        android:layout_width="525dp"
+        android:layout_height="500dp"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="-40dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="-40dp"
+        android:alpha="0.08"
+        android:src="@mipmap/cloud_sun_solid_blurred"
+        />
+
+    <LinearLayout
+        android:id="@+id/weatherLastUpdatedDateWrapperLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="16dp">
+
+        <LinearLayout
+            android:id="@+id/weatherLastUpdatedDateLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ultima actualización:"
+                android:textColor="@color/colorWhite" />
+
+            <TextView
+                android:id="@+id/weatherLastUpdatedDateTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="27/12/2019 - 00:17"
+                android:textColor="@color/colorWhite" />
+
+        </LinearLayout>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_toRightOf="@id/weatherLastUpdatedDateLayout"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_refresh" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/weatherTodayDataLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/weatherLastUpdatedDateWrapperLayout">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="84dp"
+            android:text="Córdoba"
+            android:gravity="center"
+            android:textSize="28sp"
+            android:textColor="@color/colorWhite" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mayormente despejado"
+            android:textSize="16sp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:textColor="@color/colorWhite" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="84dp"
+                android:text="24°"
+                android:textSize="48sp"
+                android:textColor="@color/colorWhite"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="4dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="C"
+                android:textSize="18sp"
+                android:textColor="@color/colorWhite" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="36dp"
+        android:layout_below="@id/weatherTodayDataLayout">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pronóstico diario"
+            android:textSize="16sp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:textColor="@color/colorWhite" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp"
+            />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="26dp"
+            android:background="#D32F2F"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:textColor="@color/colorWhite"
+            android:text="Sin conexión a internet"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>
