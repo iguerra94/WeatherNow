@@ -26,10 +26,13 @@
         android:textColor="#000000"
         android:background="@drawable/button_with_border_radius"
         android:backgroundTint="@color/colorWhite"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
         android:layout_margin="16dp"
         android:paddingLeft="10dp"
         android:paddingRight="34dp"
         android:drawableLeft="@drawable/ic_google_icon"
+        android:clickable="true"
+        android:focusable="true"
         />
 
     <Button
@@ -42,12 +45,15 @@
         android:textColor="#FFFFFF"
         android:background="@drawable/button_with_border_radius"
         android:backgroundTint="@color/colorPrimaryDark"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:paddingLeft="10dp"
         android:paddingRight="34dp"
         android:drawableLeft="@drawable/ic_email_icon"
         android:layout_below="@id/btnLoginGoogleOption"
+        android:clickable="true"
+        android:focusable="true"
         />
 
 </RelativeLayout>

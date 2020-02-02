@@ -1,40 +1,55 @@
 package com.iguerra94.weathernow.db.entities;
 
+import android.net.Uri;
+
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 import lombok.Getter;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
-@RequiredArgsConstructor
 @Entity(tableName = "users")
 public class User {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "user_id")
     public int id;
 
-    @NonNull
     @ColumnInfo(name = "first_name")
     public String firstName;
 
-    @NonNull
     @ColumnInfo(name = "last_name")
     public String lastName;
 
-    @NonNull
     @ColumnInfo(name = "email")
     public String email;
 
-    @NonNull
     @ColumnInfo(name = "password")
     public String password;
 
-    @ColumnInfo(name = "profile_image_url")
-    public String profileImageUrl;
+    @ColumnInfo(name = "profile_image_uri")
+    public String profileImageUri;
+
+    public User(String firstName, String lastName, String email, String password) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return "User: { id: " + getId() +
+                ", firstName: " + getFirstName() +
+                ", lastName: " + getLastName() +
+                ", Email: " + getEmail() +
+                ", Password: " + getPassword() +
+                ", ProfileImageUri: " + getProfileImageUri() +
+                " }";
+    }
 }
 

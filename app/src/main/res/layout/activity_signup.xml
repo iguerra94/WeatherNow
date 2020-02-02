@@ -37,12 +37,13 @@
             android:gravity="center"
             />
 
-        <ImageButton
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/signup_profile_image_view"
             android:layout_width="96dp"
             android:layout_height="96dp"
+            android:scaleType="centerCrop"
             android:layout_gravity="center"
             android:background="@drawable/image_button_placeholder"
-            android:src="@drawable/ic_add"
             />
 
     </LinearLayout>

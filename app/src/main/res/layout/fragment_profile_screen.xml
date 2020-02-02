@@ -145,15 +145,19 @@
         android:id="@+id/btnSaveUserProfileData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_alignParentBottom="true"
         android:text="Guardar"
         android:textSize="16sp"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:background="@drawable/button_with_border_radius"
         android:backgroundTint="@color/colorPrimaryDark"
-        android:layout_margin="10dp"
-        android:layout_alignParentBottom="true"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
         android:onClick="saveUserProfileData"
+        android:clickable="true"
+        android:focusable="true"
         />
+
 
 </RelativeLayout>

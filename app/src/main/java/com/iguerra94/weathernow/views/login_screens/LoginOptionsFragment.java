@@ -1,5 +1,6 @@
 package com.iguerra94.weathernow.views.login_screens;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -13,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import com.google.android.material.appbar.AppBarLayout;
 import com.iguerra94.weathernow.R;
 import com.iguerra94.weathernow.utils.FragmentUtils;
+import com.iguerra94.weathernow.views.splash_screen.SplashActivity;
 import com.iguerra94.weathernow.views.toolbar.SimpleToolbar;
 
 public class LoginOptionsFragment extends Fragment implements View.OnClickListener {
@@ -57,6 +59,10 @@ public class LoginOptionsFragment extends Fragment implements View.OnClickListen
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
+            Intent intent = new Intent(getActivity(), SplashActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+
             getActivity().finish();
         }
         return super.onOptionsItemSelected(item);
@@ -69,4 +75,5 @@ public class LoginOptionsFragment extends Fragment implements View.OnClickListen
             FragmentUtils.setFragment(getActivity(), R.id.loginContainer, loginEmailFragment);
         }
     }
+
 }

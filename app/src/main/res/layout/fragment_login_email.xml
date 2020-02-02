@@ -4,22 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".views.login_screens.LoginEmailFragment">
-<!--
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/loginEmailInputToolbarAppBarLayout"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorWhite"
-        android:theme="@style/ToolbarBlackColouredBackArrow">
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/loginEmailInputToolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:elevation="4dp"
-            app:titleTextColor="@color/colorBlack"
-            />
-    </com.google.android.material.appbar.AppBarLayout>
--->
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -57,7 +42,10 @@
             android:textColor="#FFFFFF"
             android:background="@drawable/button_with_border_radius"
             android:backgroundTint="@color/colorPrimaryDark"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
             android:layout_below="@id/loginEmailEditText"
+            android:clickable="true"
+            android:focusable="true"
             />
 
     </RelativeLayout>

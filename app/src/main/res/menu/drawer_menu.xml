@@ -28,8 +28,7 @@
     </group>
 
     <group
-        android:id="@+id/group2"
-        android:checkableBehavior="single">
+        android:id="@+id/group2">
         <item
             android:id="@+id/nav_query_developer"
             android:icon="@drawable/ic_query_developer"

@@ -4,8 +4,9 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
-
-import androidx.room.Room;
+import android.os.Handler;
+import android.util.Log;
+import android.widget.Toast;
 
 import com.iguerra94.weathernow.R;
 import com.iguerra94.weathernow.db.AppDatabase;
@@ -16,7 +17,7 @@ import com.iguerra94.weathernow.views.signup_screens.UserRegisteredActivity;
 
 import java.lang.ref.WeakReference;
 
-public class RegisterUserAsyncTask extends AsyncTask<Void, Integer, Boolean> {
+public class RegisterUserAsyncTask extends AsyncTask<Void, Void, Long> {
 
     private WeakReference<Context> context;
     private AlertDialog dialogRegisteringUser;
@@ -32,24 +33,30 @@ public class RegisterUserAsyncTask extends AsyncTask<Void, Integer, Boolean> {
         dialogRegisteringUser = (AlertDialog) DialogFactory.getInstance().getRegisteringUserDialog().create(context.get(), R.layout.dialog_registering_user);
         dialogRegisteringUser.setCancelable(false);
         dialogRegisteringUser.show();
+
+        Log.d(context.getClass().getSimpleName(), user.toString());
     }
 
     @Override
-    protected Boolean doInBackground(Void... voids) {
-        AppDatabase db = Room.databaseBuilder(context.get(), AppDatabase.class, "WeatherNowDB").build();
+    protected Long doInBackground(Void... voids) {
+        AppDatabase db = AppDatabase.getDatabase(context.get());
         UserDao userDao = db.userDao();
-        userDao.insert(user);
 
-        return true;
+        return userDao.insert(user);
     }
 
     @Override
-    protected void onPostExecute(Boolean aBoolean) {
-        dialogRegisteringUser.dismiss();
-        Intent userRegisteredIntent = new Intent(context.get(), UserRegisteredActivity.class);
-        userRegisteredIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+    protected void onPostExecute(Long rowId) {
+        Handler handler = new Handler();
+        handler.postDelayed(() -> {
+            // acciones que se ejecutan tras los milisegundos
+            dialogRegisteringUser.dismiss();
+            Intent userRegisteredIntent = new Intent(context.get(), UserRegisteredActivity.class);
+            userRegisteredIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            userRegisteredIntent.putExtra("USER_FIRST_NAME", user.getFirstName());
 
-        context.get().startActivity(userRegisteredIntent);
+            context.get().startActivity(userRegisteredIntent);
+            //Toast.makeText(context.get(), "ID GENERATED: " + rowId, Toast.LENGTH_LONG).show();
+        }, 3000);
     }
 }
-
