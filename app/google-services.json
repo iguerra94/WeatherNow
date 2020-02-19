@@ -15,11 +15,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "4602916076-orcj6gh8cnt2hr4oq2biqo5dromeeejt.apps.googleusercontent.com",
+          "client_id": "4602916076-ljuisd9r8j6bjaeqca3gpppml3vnjff7.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.iguerra94.weathernow",
-            "certificate_hash": "394cb7cee2bae80885a0b5d7feee502505bc702b"
+            "certificate_hash": "d257fe7fcc64e20721c43efc96efb632742b5e94"
           }
         },
         {
