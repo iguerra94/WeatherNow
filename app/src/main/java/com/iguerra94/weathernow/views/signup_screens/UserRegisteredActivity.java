@@ -1,5 +1,6 @@
 package com.iguerra94.weathernow.views.signup_screens;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -11,11 +12,20 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.iguerra94.weathernow.R;
+import com.iguerra94.weathernow.utils.LocaleHelper;
+import com.iguerra94.weathernow.utils.sharedPrefs.SharedPrefsKeys;
+import com.iguerra94.weathernow.utils.sharedPrefs.SharedPrefsManager;
+import com.iguerra94.weathernow.utils.sharedPrefs.SharedPrefsValues;
 import com.iguerra94.weathernow.views.login_screens.LoginActivity;
 import com.iguerra94.weathernow.views.splash_screen.SplashActivity;
 import com.iguerra94.weathernow.views.toolbar.SimpleToolbar;
 
 public class UserRegisteredActivity extends AppCompatActivity implements View.OnClickListener {
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(LocaleHelper.onAttach(newBase));
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +36,13 @@ public class UserRegisteredActivity extends AppCompatActivity implements View.On
 
         String userFirstName = getIntent().getStringExtra("USER_FIRST_NAME");
 
-        TextView userRegisteredRuccessTextView = findViewById(R.id.user_registered_success_text_view);
-        userRegisteredRuccessTextView.setText("¡Exito! Bienvenido " + userFirstName + " a WeatherNow.");
+        TextView userRegisteredRSuccessTextView = findViewById(R.id.user_registered_success_text_view);
+
+        String currentLocale = SharedPrefsManager.getInstance(this).readString(SharedPrefsKeys.APP_LANGUAGE_LOCALE);
+
+        String message = (currentLocale.equals(SharedPrefsValues.APP_LANGUAGE_LOCALE.SPANISH)) ? "¡Exito! Bienvenido " + userFirstName + " a WeatherNow." : "¡Success! Welcome " + userFirstName + " to WeatherNow.";
+
+        userRegisteredRSuccessTextView.setText(message);
 
         Button btnSigninAfterRegister = findViewById(R.id.btnSigninAfterRegister);
         btnSigninAfterRegister.setOnClickListener(this);
@@ -40,7 +55,7 @@ public class UserRegisteredActivity extends AppCompatActivity implements View.On
 
         setSupportActionBar(userRegisteredToolbar);
 
-        getSupportActionBar().setTitle("Volver");
+        getSupportActionBar().setTitle(getResources().getString(R.string.action_back_splash));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 

@@ -2,10 +2,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.iguerra94.weathernow">
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-feature android:name="android.hardware.camera" android:required="true" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.SET_ALARM" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <uses-feature android:name="android.hardware.camera"
+        android:required="false" />
 
     <application
+        android:name=".views.MainApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_app_logo"
         android:label="@string/app_name"
@@ -13,35 +21,35 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <provider
-            android:name="androidx.core.content.FileProvider"
-            android:authorities="com.iguerra94.weathernow.provider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths">
-            </meta-data>
-        </provider>
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <!--              The API key for Google Maps-based APIs. -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
 
-        <activity android:name=".views.signup_screens.UserRegisteredActivity"></activity>
+        <activity android:name=".views.signup_screens.UserRegisteredActivity" />
         <activity
             android:name=".views.main_screens.search_screen.SearchActivity"
-            android:windowSoftInputMode="stateVisible"></activity>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateVisible" />
         <activity
             android:name=".views.main_screens.MainScreenActivity"
-            android:label="@string/search_hint"
+            android:hardwareAccelerated="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".views.signup_screens.SignupActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".views.login_screens.LoginActivity"
             android:label="@string/login_options_toolbar_title"
             android:screenOrientation="portrait" />
         <activity
             android:name=".views.splash_screen.SplashActivity"
+            android:theme="@style/SplashTheme"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -49,6 +57,32 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".views.startup_screen.StartupActivity"
+            android:screenOrientation="portrait" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:grantUriPermissions="true"
+            android:exported="false"
+            android:authorities="${applicationId}.provider">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"></meta-data>
+        </provider>
+
+        <receiver
+            android:name=".utils.network.NetworkStateChangeReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".utils.notifications.AppNotificationsReceiver" /> <!-- Declare foreground service -->
+        <service
+            android:name=".utils.services.WeatherNowForegroundService"
+            android:enabled="true"
+            android:exported="true" />
     </application>
 
 </manifest>

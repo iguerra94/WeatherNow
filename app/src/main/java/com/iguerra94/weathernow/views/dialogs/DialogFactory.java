@@ -13,8 +13,8 @@ public class DialogFactory {
         return instance;
     }
 
-    public static IGenericDialog getRegisteringUserDialog() {
-        return DialogRegisteringUser.getInstance();
+    public static IGenericDialog getCustomLoadingDialog() {
+        return CustomLoadingDialog.getInstance();
     }
 
 }

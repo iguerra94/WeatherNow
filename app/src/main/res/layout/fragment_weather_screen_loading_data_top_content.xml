@@ -1,0 +1,112 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:background="@android:color/transparent"
+    android:orientation="vertical"
+    tools:context=".views.main_screens.WeatherScreenFragment">
+
+    <include layout="@layout/data_placeholder_thin_layout_gravity_center"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        />
+
+    <include layout="@layout/data_placeholder_thin_layout_gravity_start"
+        android:layout_width="match_parent"
+        android:layout_height="28dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center_vertical">
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <include layout="@layout/data_placeholder_thick_layout_gravity_end"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="2dp"
+                />
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <include layout="@layout/data_placeholder_thick_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="2dp"
+                />
+
+            <include layout="@layout/data_placeholder_thick_layout"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginTop="16dp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="start|center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="4dp">
+
+                <include layout="@layout/data_placeholder_thick_layout_gravity_end"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:layout_marginEnd="4dp"
+                    />
+
+                <include layout="@layout/data_placeholder_thin_layout_gravity_center"
+                    android:layout_width="18dp"
+                    android:layout_height="26dp"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <include layout="@layout/data_placeholder_thick_layout_gravity_end"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:layout_marginEnd="4dp"
+                    />
+
+                <include layout="@layout/data_placeholder_thin_layout_gravity_center"
+                    android:layout_width="18dp"
+                    android:layout_height="26dp"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

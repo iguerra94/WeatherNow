@@ -1,189 +1,237 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.iguerra94.weathernow.views.main_screens.SettingsScreenFragment">
 
-    <RelativeLayout
+    <LinearLayout
         android:id="@+id/settings_language_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp">
+        android:layout_margin="16dp"
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Idioma: "
-            android:textSize="16sp"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
+            android:text="@string/settings_screen_language_title_textview"
+            android:textSize="12sp"
+            android:layout_marginBottom="12dp"
             />
 
-        <RelativeLayout
+        <RadioGroup
+            android:id="@+id/radioGroupSettingsLanguageLocale"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true">
+            android:orientation="horizontal"
+            android:gravity="end">
 
-            <RadioGroup
+            <RadioButton
+                android:id="@+id/settings_locale_spanish"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="right">
+                android:layout_marginEnd="32dp"
+                android:checked="true"
+                android:text="@string/settings_screen_language_spanish_textview"
+                android:textColor="@color/colorBlack"
+                android:textSize="16sp"
+                />
 
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Español"
-                    android:textSize="16sp"
-                    android:checked="true"
-                    android:layout_marginRight="32dp"
-                    />
+            <RadioButton
+                android:id="@+id/settings_locale_english"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/settings_screen_language_english_textview"
+                android:textColor="@color/colorBlack"
+                android:textSize="16sp"
+                />
 
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Inglés"
-                    android:textSize="16sp"
-                    />
+        </RadioGroup>
 
-            </RadioGroup>
+    </LinearLayout>
 
-        </RelativeLayout>
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/colorSecondary"
+        android:layout_below="@id/settings_language_layout"
+        />
 
-    </RelativeLayout>
-
-    <RelativeLayout
+    <LinearLayout
         android:id="@+id/settings_weather_unit_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_below="@id/settings_language_layout">
+        android:layout_margin="16dp"
+        android:orientation="vertical"
+        android:layout_below="@id/divider1">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Unidad de temperatura: "
-            android:textSize="16sp"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
+            android:text="@string/settings_screen_temperature_unit_title_textview"
+            android:textSize="12sp"
+            android:layout_marginBottom="12dp"
             />
 
-        <RelativeLayout
+        <RadioGroup
+            android:id="@+id/radioGroupSettingsTempUnit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true">
+            android:orientation="horizontal">
 
-            <RadioGroup
+            <RadioButton
+                android:id="@+id/settings_weather_unit_celsius"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="right">
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="°C"
-                    android:textSize="16sp"
-                    android:checked="true"
-                    android:layout_marginRight="32dp"
-                    />
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="°F"
-                    android:textSize="16sp"
-                    />
-
-            </RadioGroup>
-
-        </RelativeLayout>
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/settings_toggle_show_app_notifications_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_below="@id/settings_weather_unit_layout">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Notificaciones: "
-            android:textSize="16sp"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            />
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true">
-
-            <Switch
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="right"
+                android:text="@string/settings_screen_temperature_unit_celsius_textview"
+                android:textSize="16sp"
+                android:textColor="@color/colorBlack"
                 android:checked="true"
+                android:layout_marginEnd="32dp"
                 />
 
-        </RelativeLayout>
+            <RadioButton
+                android:id="@+id/settings_weather_unit_fahrenheit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/settings_screen_temperature_unit_fahrenheit_textview"
+                android:textSize="16sp"
+                android:textColor="@color/colorBlack"
+                />
 
-    </RelativeLayout>
+        </RadioGroup>
 
-    <RelativeLayout
-        android:id="@+id/settings_app_notifications_daily_time_layout"
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_below="@id/settings_toggle_show_app_notifications_layout">
+        android:layout_height="1dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/colorSecondary"
+        android:layout_below="@id/settings_weather_unit_layout"
+        />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Horario de Notificación: "
-            android:textSize="16sp"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            />
-
-        <EditText
-            android:layout_width="75dp"
-            android:layout_height="wrap_content"
-            android:text="12:00"
-            android:gravity="center"
-            android:layout_alignParentEnd="true"
-            />
-
-    </RelativeLayout>
-
-    <Button
-        android:id="@+id/btnSaveSettings"
+    <LinearLayout
+        android:id="@+id/settings_app_notifications_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:layout_alignParentBottom="true"
-        android:text="Guardar"
-        android:textSize="16sp"
-        android:textAllCaps="false"
-        android:textColor="#FFFFFF"
-        android:background="@drawable/button_with_border_radius"
-        android:backgroundTint="@color/colorPrimaryDark"
-        android:foreground="?attr/selectableItemBackgroundBorderless"
-        android:onClick="saveSettings"
-        android:clickable="true"
-        android:focusable="true"
-        />
+        android:orientation="vertical"
+        android:layout_below="@id/divider2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/settings_screen_app_notifications_title_textview"
+            android:textSize="12sp"
+            android:layout_marginBottom="12dp"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="16dp"
+                android:text="@string/settings_screen_app_notifications_enabled_textview"
+                android:textColor="@color/colorBlack"
+                android:textSize="16sp"
+                android:gravity="center"
+                />
+
+            <Switch
+                android:id="@+id/settings_screen_enable_app_notifications_switch_field"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/settings_screen_app_notifications_schedule_textview"
+                android:textSize="16sp"
+                android:textColor="@color/colorBlack"
+                android:layout_marginEnd="24dp"
+                />
+
+            <EditText
+                android:id="@+id/settings_screen_schedule_app_notifications_edit_text"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="12:00"
+                android:gravity="center"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/weather_screen_network_status_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/settingsChangedNotConnectionMessageTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:visibility="gone"
+            android:text="@string/settings_changed_not_connection_message_text_view" />
+
+        <Button
+            android:id="@+id/btnSaveSettings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@drawable/button_with_border_radius"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:textAllCaps="false"
+            android:text="@string/save_data_button"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_below="@id/settingsChangedNotConnectionMessageTextView"
+            />
+
+        <TextView
+            android:id="@+id/settings_screen_network_status_view_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="26dp"
+            android:background="@color/colorRedMD700"
+            android:gravity="center"
+            android:visibility="gone"
+            android:textSize="12sp"
+            android:textColor="@color/colorWhite"
+            android:layout_below="@id/btnSaveSettings"
+            android:text="@string/app_network_status_without_connection_textview"
+            />
+
+    </RelativeLayout>
 
 </RelativeLayout>
+</layout>

@@ -1,170 +1,151 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".views.signup_screens.SignupActivity">
-
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/signup_toolbar_app_bar_layout"
+<layout>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:theme="@style/ToolbarBlackColouredBackArrow"
-        android:background="@color/colorWhite">
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/signup_toolbar"
+        android:layout_height="match_parent"
+        tools:context=".views.signup_screens.SignupActivity">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/signup_toolbar_app_bar_layout"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:elevation="4dp"
-            app:titleTextColor="@android:color/black"
-            />
-    </com.google.android.material.appbar.AppBarLayout>
+            android:background="@color/colorWhite"
+            android:theme="@style/ToolbarBlackColouredBackArrow">
 
-    <LinearLayout
-        android:id="@+id/linear_layout_image_button_signup"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_below="@id/signup_toolbar_app_bar_layout">
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/signup_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:elevation="4dp"
+                app:titleTextColor="@android:color/black" />
+        </com.google.android.material.appbar.AppBarLayout>
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/linear_layout_image_button_signup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:text="Imágen de perfil"
-            android:gravity="center"
-            />
+            android:orientation="vertical"
+            android:layout_below="@id/signup_toolbar_app_bar_layout">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/signup_profile_image_view"
-            android:layout_width="96dp"
-            android:layout_height="96dp"
-            android:scaleType="centerCrop"
-            android:layout_gravity="center"
-            android:background="@drawable/image_button_placeholder"
-            />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:gravity="center"
+                android:text="@string/profile_image_title_textview" />
 
-    </LinearLayout>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/signup_profile_image_view"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:layout_gravity="center"
+                android:background="@drawable/image_button_placeholder"
+                android:scaleType="centerCrop" />
 
-    <TextView
-        android:id="@+id/signup_first_name_label"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Nombre *"
-        android:textSize="12sp"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_below="@id/linear_layout_image_button_signup"
-        />
+        </LinearLayout>
 
-    <EditText
-        android:id="@+id/signup_first_name_edit_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:hint="Ingresa tu nombre..."
-        android:inputType="text"
-        android:layout_below="@id/signup_first_name_label"
-        />
-
-    <TextView
-        android:id="@+id/signup_last_name_label"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Apellido *"
-        android:textSize="12sp"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_below="@id/signup_first_name_edit_text"
-        />
-
-    <EditText
-        android:id="@+id/signup_last_name_edit_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:hint="Ingresa tu apellido..."
-        android:inputType="text"
-        android:layout_below="@id/signup_last_name_label"
-        />
-
-    <TextView
-        android:id="@+id/signup_email_label"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="E-mail *"
-        android:textSize="12sp"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_below="@id/signup_last_name_edit_text"
-        />
-
-    <EditText
-        android:id="@+id/signup_email_edit_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:hint="Ingresa tu e-mail..."
-        android:inputType="textEmailAddress"
-        android:layout_below="@id/signup_email_label"
-        />
-
-    <TextView
-        android:id="@+id/signup_password_label"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Clave *"
-        android:textSize="12sp"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_below="@id/signup_email_edit_text"
-        />
-
-    <EditText
-        android:id="@+id/signup_password_edit_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:hint="Ingresa tu clave..."
-        android:inputType="textPassword"
-        android:layout_below="@id/signup_password_label"
-        />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_alignParentBottom="true">
-
-        <TextView
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/signupFirstNameLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/linear_layout_image_button_signup"
             android:layout_marginLeft="16dp"
-            android:text="* Campos obligatorios"
-            />
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="8dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/signupFirstNameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/signup_screen_name_title_textview"
+                android:inputType="text"
+                android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/signupLastNameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/signupFirstNameLayout"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="8dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/signupLastNameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/signup_screen_lastname_title_textview"
+                android:inputType="text"
+                android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/signupEmailLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/signupLastNameLayout"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="8dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/signupEmailEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/signup_screen_email_title_textview"
+                android:inputType="textEmailAddress"
+                android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/signupPasswordLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/signupEmailLayout"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="8dp"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/signupPasswordEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/signup_screen_password_title_textview"
+                android:inputType="textPassword"
+                android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/btnSignupNewUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:text="Registrarme"
-            android:textSize="16sp"
-            android:textAllCaps="false"
-            android:textColor="#FFFFFF"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
             android:background="@drawable/button_with_border_radius"
+            android:layout_alignParentBottom="true"
             android:backgroundTint="@color/colorPrimaryDark"
-            android:foreground="?attr/selectableItemBackgroundBorderless"
             android:clickable="true"
             android:focusable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:text="@string/signup_screen_register_user_button_text"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
             />
 
-    </LinearLayout>
-
-</RelativeLayout>
+    </RelativeLayout>
+</layout>

@@ -1,7 +1,5 @@
 package com.iguerra94.weathernow.db.entities;
 
-import android.net.Uri;
-
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
@@ -40,13 +38,17 @@ public class User {
         this.password = password;
     }
 
+    public User() {
+
+    }
+
     @NonNull
     @Override
     public String toString() {
         return "User: { id: " + getId() +
                 ", firstName: " + getFirstName() +
                 ", lastName: " + getLastName() +
-                ", Email: " + getEmail() +
+                ", email: " + getEmail() +
                 ", Password: " + getPassword() +
                 ", ProfileImageUri: " + getProfileImageUri() +
                 " }";

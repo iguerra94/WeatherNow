@@ -13,3 +13,6 @@
 /app/schemas
 .externalNativeBuild
 .cxx
+api.properties
+/app/debug
+/app/release

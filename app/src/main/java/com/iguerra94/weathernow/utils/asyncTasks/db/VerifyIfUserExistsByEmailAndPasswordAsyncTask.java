@@ -1,29 +1,25 @@
-package com.iguerra94.weathernow.utils.asyncTasks;
+package com.iguerra94.weathernow.utils.asyncTasks.db;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.widget.Toast;
-
-import androidx.fragment.app.FragmentActivity;
 
 import com.iguerra94.weathernow.db.AppDatabase;
 import com.iguerra94.weathernow.db.daos.UserDao;
 import com.iguerra94.weathernow.db.entities.User;
-import com.iguerra94.weathernow.db.entities.exceptions.UserExistsException;
-import com.iguerra94.weathernow.utils.ToastUtils;
-import com.iguerra94.weathernow.utils.asyncTasks.callbacks.IAsyncTaskResponse;
+import com.iguerra94.weathernow.utils.asyncTasks.callbacks.IVerifyIfUserExistsByEmailAndPasswordTaskResponse;
 
 import java.lang.ref.WeakReference;
 
 import lombok.SneakyThrows;
 
-public class VerifyIfUserExistsAsyncTask extends AsyncTask<Void, Void, User> {
+public class VerifyIfUserExistsByEmailAndPasswordAsyncTask extends AsyncTask<Void, Void, User> {
 
     private WeakReference<Context> context;
-    private User user;
-    private WeakReference<IAsyncTaskResponse> mCallback;
 
-    public VerifyIfUserExistsAsyncTask(Context context, User user, IAsyncTaskResponse callback) {
+    private User user;
+    private WeakReference<IVerifyIfUserExistsByEmailAndPasswordTaskResponse> mCallback;
+
+    public VerifyIfUserExistsByEmailAndPasswordAsyncTask(Context context, User user, IVerifyIfUserExistsByEmailAndPasswordTaskResponse callback) {
         this.context = new WeakReference<>(context);
         this.user = user;
         this.mCallback = new WeakReference<>(callback);
@@ -34,16 +30,16 @@ public class VerifyIfUserExistsAsyncTask extends AsyncTask<Void, Void, User> {
         AppDatabase db = AppDatabase.getDatabase(context.get());
         UserDao userDao = db.userDao();
 
-        return userDao.findByEmail(user.getEmail());
+        return userDao.findByEmailAndPassword(user.getEmail(), user.getPassword());
     }
 
     @SneakyThrows
     @Override
     protected void onPostExecute(User userFound) {
-        final IAsyncTaskResponse callback = mCallback.get();
+        final IVerifyIfUserExistsByEmailAndPasswordTaskResponse callback = mCallback.get();
 
         if(callback != null) {
-            callback.onTaskDone(userFound != null);
+            callback.onVerifyIfUserExistsByEmailAndPasswordTaskDone(userFound);
         }
     }
 }

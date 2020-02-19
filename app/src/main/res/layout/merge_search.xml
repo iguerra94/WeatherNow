@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@null"
-        android:hint="Ingrese la ciudad a buscar"
+        android:hint="@string/activity_search_edit_text_hint"
         android:imeOptions="actionSearch"
         android:inputType="text"
         android:maxLines="1"

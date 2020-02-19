@@ -6,7 +6,7 @@
         android:id="@+id/action_clear"
         android:icon="@drawable/ic_action_clear"
         android:enabled="true"
-        android:title="Limpiar texto"
+        android:title="@string/action_clear_text"
         app:showAsAction="always" />
 
 </menu>

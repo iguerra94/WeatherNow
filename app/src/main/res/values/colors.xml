@@ -5,6 +5,14 @@
     <color name="colorPrimaryDark75alpha">#BF2C98F0</color>
     <color name="colorAccent">#2C98F0</color>
     <color name="colorBlack">#000000</color>
+    <color name="colorGreyDark">#333333</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorGrey">#666666</color>
+    <color name="colorSecondary">#33000000</color>
+    <color name="colorGreyDisabled">#e0e0e0</color>
+    <color name="colorGreyShimmer">#dddddd</color>
+    <color name="colorRedMD700">#D32F2F</color>
+    <color name="colorRed">#FF0000</color>
+    <color name="colorGreenMD700">#689f38</color>
+    <color name="background">#dddddd</color>
 </resources>

@@ -2,17 +2,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="128dp"
     android:gravity="center"
     android:paddingTop="40dp"
     android:paddingStart="16dp"
+    android:paddingEnd="16dp"
     android:paddingBottom="16dp">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/nav_user_image"
-        android:layout_width="78dp"
-        android:layout_height="78dp"
-        android:src="@mipmap/profile_image"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:src="@mipmap/account_circle_white_bg"
         />
 
     <TextView
@@ -21,7 +22,7 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:layout_marginStart="16sp"
-        android:text="Ivan Guerra"
+        android:text=""
         android:textSize="22sp"
         android:textColor="@color/colorWhite"
         android:gravity="center_vertical"

@@ -2,6 +2,8 @@ package com.iguerra94.weathernow.views.main_screens.search_screen;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
+import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 
 import com.iguerra94.weathernow.R;
@@ -25,7 +27,7 @@ public class SearchBar extends TransformingToolbar {
     protected void onFinishInflate() {
         super.onFinishInflate();
         inflate(getContext(), R.layout.merge_search, this);
-        editText = (EditText) findViewById(R.id.toolbar_search_edittext);
+        editText = findViewById(R.id.toolbar_search_edittext);
     }
 
     @Override

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/daily_weather_item_background_with_border_radius">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:paddingStart="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp">
+
+            <View
+                android:id="@+id/weather_item_day_name_placeholder"
+                android:layout_width="40dp"
+                android:layout_height="@dimen/placeholderThinHeight"
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/border_rounded_16"
+                android:backgroundTint="@color/colorWhite"/>
+
+            <View
+                android:layout_width="50dp"
+                android:layout_height="@dimen/placeholderThinHeight"
+                android:background="@drawable/border_rounded_16"
+                android:backgroundTint="@color/colorWhite"
+                android:layout_below="@id/weather_item_day_name_placeholder"
+                />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:padding="8dp"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="@drawable/border_rounded_4"
+                android:backgroundTint="@color/colorWhite"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="40dp"
+                    android:layout_height="@dimen/placeholderThinHeight"
+                    android:layout_marginBottom="4dp"
+                    android:background="@drawable/border_rounded_16"
+                    android:backgroundTint="@color/colorWhite"
+                    />
+
+                <View
+                    android:layout_width="50dp"
+                    android:layout_height="@dimen/placeholderThinHeight"
+                    android:background="@drawable/border_rounded_16"
+                    android:backgroundTint="@color/colorWhite"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="end|center"
+            android:paddingEnd="20dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="4dp">
+
+                <View
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/border_rounded_2"
+                    android:backgroundTint="@color/colorWhite"
+                    />
+
+                <View
+                    android:layout_width="12dp"
+                    android:layout_height="6dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/border_rounded_4"
+                    android:backgroundTint="@color/colorWhite"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/border_rounded_2"
+                    android:backgroundTint="@color/colorWhite"
+                    />
+
+                <View
+                    android:layout_width="12dp"
+                    android:layout_height="6dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/border_rounded_4"
+                    android:backgroundTint="@color/colorWhite"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

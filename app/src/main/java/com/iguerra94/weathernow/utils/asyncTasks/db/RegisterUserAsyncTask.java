@@ -1,4 +1,4 @@
-package com.iguerra94.weathernow.utils.asyncTasks;
+package com.iguerra94.weathernow.utils.asyncTasks.db;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.util.Log;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import com.iguerra94.weathernow.R;
 import com.iguerra94.weathernow.db.AppDatabase;
@@ -30,7 +30,9 @@ public class RegisterUserAsyncTask extends AsyncTask<Void, Void, Long> {
 
     @Override
     protected void onPreExecute() {
-        dialogRegisteringUser = (AlertDialog) DialogFactory.getInstance().getRegisteringUserDialog().create(context.get(), R.layout.dialog_registering_user);
+        dialogRegisteringUser = (AlertDialog) DialogFactory.getInstance().getCustomLoadingDialog().create(context.get(),
+                R.layout.custom_loading_dialog, R.string.dialog_registering_user_message_text);
+
         dialogRegisteringUser.setCancelable(false);
         dialogRegisteringUser.show();
 
@@ -56,7 +58,6 @@ public class RegisterUserAsyncTask extends AsyncTask<Void, Void, Long> {
             userRegisteredIntent.putExtra("USER_FIRST_NAME", user.getFirstName());
 
             context.get().startActivity(userRegisteredIntent);
-            //Toast.makeText(context.get(), "ID GENERATED: " + rowId, Toast.LENGTH_LONG).show();
         }, 3000);
     }
 }

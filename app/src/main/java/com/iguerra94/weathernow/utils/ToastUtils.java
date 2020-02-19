@@ -12,7 +12,7 @@ import com.iguerra94.weathernow.R;
 
 public class ToastUtils {
 
-    public static Toast createCustomToast(FragmentActivity activity, String message) {
+    public static Toast createCustomToast(FragmentActivity activity, int LENGTH, String message) {
         LayoutInflater inflater = activity.getLayoutInflater();
         View layout = inflater.inflate(R.layout.custom_toast, activity.findViewById(R.id.custom_toast_container));
 
@@ -21,7 +21,7 @@ public class ToastUtils {
 
         Toast toast = new Toast(activity);
         toast.setGravity(Gravity.CENTER, 0, 0);
-        toast.setDuration(Toast.LENGTH_LONG);
+        toast.setDuration(LENGTH);
         toast.setView(layout);
 
         return toast;

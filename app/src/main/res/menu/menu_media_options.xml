@@ -2,19 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:title="Seleccione la fuente"
+        android:title="@string/menu_select_media_source"
         android:enabled="false"
         />
 
     <item
         android:id="@+id/nav_take_photo"
-        android:title="Tomar foto"
+        android:title="@string/menu_capture_image"
         android:icon="@drawable/ic_take_photo_with_padding"
         />
 
     <item
         android:id="@+id/nav_image_gallery"
-        android:title="Galeria"
+        android:title="@string/menu_pick_from_image_gallery"
         android:icon="@drawable/ic_image_gallery_with_padding"
         />
 </menu>
